@@ -8,7 +8,7 @@ market = '{0}-{1}'.format(trade, currency)
 zen_summary = b.get_market_summary(market)
 zen_price_last = zen_summary['result']['Last']
 
-ticks = b.get_ticks(market, "day")
+ticks = b.get_ticks(market, "thirtyMin")
 
 length_of_ticks = len(ticks['result'])
 
@@ -26,8 +26,10 @@ while(curr_day < num_of_days):
 
 running_ave += zen_price_last
 
-print(running_ave/(num_of_days))
-print(num)
+
+sma = running_ave/num_of_days
+
+print(sma)
 
 # calc standard deviation
 curr_day = 0
