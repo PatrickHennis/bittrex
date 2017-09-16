@@ -1,5 +1,5 @@
 from bittrex_v2 import Bittrex
-import statistics
+import decimal
 
 b = Bittrex()
 
@@ -33,25 +33,24 @@ sma = running_ave/num_of_days
 
 print(sma)
 
+
+
 # calc standard deviation
 curr_day = 0
 squared_deviations = 0
 
 
-    # not sure how many deviations from the sma it is
-  dev = statistics.stdev(sma)
-  #not sure if bands are equal on each side of sma
-  highDev = dev + sma
-  lowDev = sma - dev
-
 
 ## another way
-oneSD = sma * .34
-twoSD = sma * .475
+oneSD = sma * decimal.Decimal(.34)
+twoSD = sma * decimal.Decimal(.475)
 
 
 highOneSD = sma + oneSD
 lowOneSD = sma - oneSD
+
+print(highOneSD)
+print(lowOneSD)
 
 highTwoSD = sma + twoSD
 lowTwoSD = sma - twoSD
