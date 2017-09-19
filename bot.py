@@ -1,8 +1,12 @@
 from bittrex_v2 import Bittrex
 import sys
 import time
+import json
 
-b = Bittrex("dad26eb421d04941b2fc3bcf27d25a38", "dee88d50c7394e2d82e8fe9ad65bc192")
+with open('secrets.json') as data_file:
+    data = json.load(data_file)
+
+b = Bittrex(data['key'], data['secret'])
 
 def main():
     help()
