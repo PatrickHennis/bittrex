@@ -40,7 +40,6 @@ curr_day = 0
 squared_deviations = 0
 
 
-
 ## another way
 oneSD = sma * decimal.Decimal(.34)
 twoSD = sma * decimal.Decimal(.475)
